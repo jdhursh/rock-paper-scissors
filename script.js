@@ -21,6 +21,13 @@ switch(randomNum) {
 }
 }
 
-let compChoice = getComputerChoice();
+function getPlayerChoice() {
+    let playerInput = prompt ("Rock, Paper, Scissors . . .", "Shoot!");
+    return playerInput;
+}
 
-console.log(compChoice);
+console.log(getPlayerChoice());
+
+const compChoice = getComputerChoice();
+
+
