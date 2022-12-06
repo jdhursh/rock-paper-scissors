@@ -64,7 +64,10 @@ function playRound(playerChoice, compChoice) {
     }
 }
 
-console.log(playerChoice);
-console.log(compChoice);
+let results = playRound(playerChoice, compChoice);
 
-console.log(playRound(playerChoice, compChoice));
+document.getElementById("demo").innerHTML = results;
+document.getElementById("you").innerHTML = "You: " + playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+document.getElementById("comp").innerHTML = "Computer: " + compChoice;
+
+
