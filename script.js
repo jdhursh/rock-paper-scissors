@@ -1,22 +1,21 @@
 
 function getComputerChoice(){
-let randomNum = Math.floor(Math.random() * 10);
+let randomNum = Math.floor(Math.random() * 9);
 
 switch(randomNum) {
     case 0:
     case 1:
     case 2:
-    case 3:
         return "Rock";
         break;
+    case 3:
     case 4:
     case 5:
-    case 6:
         return "Paper";
         break;
+    case 6:
     case 7:
     case 8:
-    case 9:
         return "Scissors";
 }
 }
@@ -26,8 +25,46 @@ function getPlayerChoice() {
     return playerInput;
 }
 
-console.log(getPlayerChoice());
-
+const playerChoice = getPlayerChoice();
 const compChoice = getComputerChoice();
 
+function playRound(playerChoice, compChoice) {
+    
+    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 
+    switch(playerChoice) {
+        case "Rock":
+            if (compChoice == "Paper") {
+                return "You lose!";
+            } else if (compChoice == "Rock") {
+                return "Tie!";
+            } else {
+                return "You Win!";
+            }
+            break;
+        case "Paper":
+            if (compChoice == "Scissors") {
+                return "You lose!";
+            } else if (compChoice == "Paper") {
+                return "Tie!";
+            } else {
+                return "You win!";
+            }
+            break;
+        case "Scissors":
+            if (compChoice == "Rock") {
+                return "You lose!";
+            } else if (compChoice == "Scissors") {
+                return "Tie!";
+            } else {
+                return "You win!";
+            }
+        default:
+            return "Uh oh! Something went wrong!";
+    }
+}
+
+console.log(playerChoice);
+console.log(compChoice);
+
+console.log(playRound(playerChoice, compChoice));
