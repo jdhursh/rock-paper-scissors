@@ -21,13 +21,15 @@ function getComputerChoice() {
 }
 
 function userInput() {
-    let input = prompt('rock, paper, scissors');
+    let input = prompt('rock, paper, scissors').toLowerCase();
 
     return input;
 }
 
-const compChoice = getComputerChoice();
-const userChoice = userInput().toLowerCase();
+let compChoice;
+let userChoice;
+
+
 
 function playRound(compChoice, userChoice) {
 
@@ -48,4 +50,21 @@ function playRound(compChoice, userChoice) {
         }
 }
 
-const result = playRound(compChoice, userChoice);
+let result;
+
+function game(){
+
+
+    for(i = 0; i < 5; i++) {
+        compChoice = getComputerChoice();
+        userChoice = userInput();
+        result = playRound(compChoice, userChoice);
+        console.log("Round", i + 1)
+        console.log("User: ", userChoice);
+        console.log("Computer: ", compChoice);
+        console.log(result);
+    }
+    
+}
+
+game();
