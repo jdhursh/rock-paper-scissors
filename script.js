@@ -54,17 +54,31 @@ let result;
 
 function game(){
 
+    console.log("- New Game -");
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
 
     for(i = 0; i < 5; i++) {
         compChoice = getComputerChoice();
         userChoice = userInput();
         result = playRound(compChoice, userChoice);
+
+        if (result == 'you win') {
+            wins++;
+        } else if (result == 'you lose'){
+            losses++;
+        } else {
+            ties++;
+        }
+
         console.log("Round", i + 1)
         console.log("User: ", userChoice);
         console.log("Computer: ", compChoice);
         console.log(result);
     }
+    console.log("Wins: ", wins);
+    console.log("Losses: ", losses);
+    console.log("Ties: ", ties);
     
 }
-
-game();
